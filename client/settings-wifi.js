@@ -9,6 +9,8 @@ async function updateSettingsWifiPage() {
         document.getElementById("settings-wifi-current-connection-status-ssid");
     var wifiCurrentConnectionStatusSignal =
         document.getElementById("settings-wifi-current-connection-status-signal");
+    var wifiCurrentConnectionStatusBitrate =
+        document.getElementById("settings-wifi-current-connection-status-bitrate");
 
     var wifiInputSSID = document.getElementById("settings-wifi-input-ssid");
     var wifiInputPassword = document.getElementById("settings-wifi-input-password");
@@ -23,6 +25,7 @@ async function updateSettingsWifiPage() {
         if (res.details.state === "connected") {
             wifiCurrentConnectionStatusSSID.innerHTML = res.ssid;
             wifiCurrentConnectionStatusSignal.innerHTML = res.details.signal;
+            wifiCurrentConnectionStatusBitrate.innerHTML = res.details.bitrate;
 
             wifiInputSSID.value = res.ssid;
         }
