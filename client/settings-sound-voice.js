@@ -120,12 +120,12 @@ function InitSettingsSoundVolumePage() {
                     }
                 });
         }
-    };*/
+    }; */
 
     updateSettingsSoundVolumePage();
 }
-
-/*function postFile(url, path, progressCallback, callback) {
+/*
+function postFile(url, path, progressCallback, callback) {
     var formData = new FormData();
     formData.append("file", path);
 
@@ -173,7 +173,7 @@ function getVoicePackInstallStatus(callback) {
             callback(err);
         }
     }, 1000);
-}*/
+} */
 
 window.InitSettingsSoundVolumePage = InitSettingsSoundVolumePage;
 window.updateSoundVolumeSaveButton = updateSoundVolumeSaveButton;

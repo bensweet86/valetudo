@@ -12,7 +12,8 @@ export class ApiService {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify(body)
+            body: JSON.stringify(body),
+            cache: "no-store"
         });
         if (!response.ok) {
             throw Error(await response.text());
@@ -202,6 +203,18 @@ export class ApiService {
         return await this.fetch("GET", "api/v2/valetudo/version");
     }
 
+    static async getValetudoLogContent() {
+        return await this.fetch("GET", "api/v2/valetudo/log/content");
+    }
+
+    static async getValetudoLogLevel() {
+        return await this.fetch("GET", "api/v2/valetudo/log/level");
+    }
+
+    static async setValetudoLogLevel(level) {
+        await this.fetch("PUT", "api/v2/valetudo/log/level", {level: level});
+    }
+
     static async getRobot() {
         return await this.fetch("GET", "api/v2/robot");
     }
@@ -340,9 +353,8 @@ export class ApiService {
     }
 
     static async testSpeakerVolume() {
-        await this.fetch("PUT", "api/v2/robot/capabilities/SpeakerVolumeControlCapability", {action: "test_speaker"});
+        await this.fetch("PUT", "api/v2/robot/capabilities/SpeakerTestCapability", {action: "play_test_sound"});
     }
-
     static async getInstallVoicePackStatus() {
         return await this.fetch("GET", "api/install_voice_pack_status");
     }
