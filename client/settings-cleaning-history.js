@@ -82,36 +82,43 @@ async function loadNextRemainingElements() {
                 "   </ons-row>" +
                 "   <ons-row>" +
                 "       <ons-col></ons-col>" +
-                "       <ons-col vertical-align='center' width='100px'>Duration</ons-col>" +
-                "       <ons-col vertical-align='center' width='150px'>" + durationHours +
+                "       <ons-col vertical-align='center' width='250px'>" +
+                "           <ons-row>" +
+                "               <ons-col></ons-col>" +
+                "               <ons-col vertical-align='center' width='100px'>Duration</ons-col>" +
+                "               <ons-col vertical-align='center' width='150px'>" + durationHours +
                 ":" + formatTwoDigitNumber(durationMinutes) + ":" +
                 formatTwoDigitNumber(durationSeconds) + "</ons-col>" +
-                "       <ons-col></ons-col>" +
-                "   </ons-row>" +
-                "   <ons-row>" +
-                "       <ons-col></ons-col>" +
-                "       <ons-col vertical-align='center' width='100px'>Area</ons-col>" +
-                "       <ons-col vertical-align='center' width='150px'>" + area +
+                "           </ons-row>" +
+                "           <ons-row>" +
+                "               <ons-col></ons-col>" +
+                "               <ons-col vertical-align='center' width='100px'>Area</ons-col>" +
+                "               <ons-col vertical-align='center' width='150px'>" + area +
                 " m<sup>2</sup></ons-col>" +
-                "       <ons-col></ons-col>" +
-                "   </ons-row>" +
-                "   <ons-row>" +
-                "       <ons-col></ons-col>" +
-                "       <ons-col vertical-align='center' width='100px'>Completed</ons-col>" +
-                "       <ons-col vertical-align='center' width='150px'>" +
+                "           </ons-row>" +
+                "           <ons-row>" +
+                "               <ons-col></ons-col>" +
+                "               <ons-col vertical-align='center' width='100px'>Completed</ons-col>" +
+                "               <ons-col vertical-align='center' width='150px'>" +
                 (state === "successful" ? "<ons-icon icon='fa-check-circle' style='color:green;'>"
                     : "<ons-icon icon='fa-times-circle' style='color:red;'>") +
-                "</ons-col>" +
-                "       <ons-col></ons-col>" +
-                "   </ons-row>" +
+                "               </ons-col>" +
+                "           </ons-row>" +
                 (errorCode > 0
-                    ? "   <ons-row>" +
+                    ? "     <ons-row>" +
                             "       <ons-col></ons-col>" +
                             "       <ons-col vertical-align='center' width='400px' style='text-align:center;'><ons-icon icon='fa-warning' style='color:red;'></ons-icon>&nbsp;" +
                             errorDescription + " (Code: " + errorCode + ")</ons-col>" +
                             "       <ons-col></ons-col>" +
                             "   </ons-row>"
                     : "") +
+                "       </ons-col>" +
+                "       <ons-col>" +
+                "           <ons-button class='settings-cleaning-history-map' modifier='small--quiet'" +
+                "onclick=\"window.fn.pushPage({'id': 'settings-cleaning-history-map.html', 'title': 'Cleaning History Map', 'data': {'recordId' : " + historyTimestamp + "}})\" title='Show cleaning map'>" +
+                " <ons-icon icon='fa-map''></ons-icon></ons-button>" +
+                "       </ons-col>" +
+                "   </ons-row>" +
                 "</ons-list-item>"));
             // load next element
             loadNextRemainingElements();

@@ -38,3 +38,20 @@ canvas#map-canvas {
     background-color: #212121;
     color: #aaa;
 }
+
+.settings-cleaning-history-map-page-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+canvas#settings-cleaning-history-map {
+    height: 100%;
+    width: 100%;
+    touch-action: none;
+    background-image: linear-gradient(var(--map-background-1), var(--map-background-2));
+}
