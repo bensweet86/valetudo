@@ -315,6 +315,14 @@ export class ApiService {
         return await this.fetch("PUT", "api/v2/robot/capabilities/JobHistoryCapability", {type: "detail", id: recordId});
     }
 
+    static async getJobRecordMap(recordId) {
+        return await this.fetch("PUT", "api/v2/robot/capabilities/JobHistoryCapability", {type: "map", id: recordId});
+    }
+
+    static async getJobRecordMapData(mapName) {
+        return await this.fetch("PUT", "api/v2/robot/capabilities/JobHistoryCapability", {type: "mapdata", name: mapName});
+    }
+
     static async getWifiStatus() {
         return await this.fetch("GET", "api/v2/robot/capabilities/WifiConfigurationCapability");
     }
