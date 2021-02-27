@@ -25,7 +25,7 @@ async function updateSettingsWifiPage() {
         if (res.details.state === "connected") {
             wifiCurrentConnectionStatusSSID.innerHTML = res.ssid;
             wifiCurrentConnectionStatusSignal.innerHTML = res.details.signal;
-            wifiCurrentConnectionStatusBitrate.innerHTML = res.details.bitrate;
+            wifiCurrentConnectionStatusBitrate.innerHTML = res.details.upspeed;
 
             wifiInputSSID.value = res.ssid;
         }
